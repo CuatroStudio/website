@@ -69,6 +69,16 @@ nav img {
   padding: 36px;
   padding-bottom: 60px;
   background: var(--white);
+  border-radius: 12px;
+  margin: 0 auto;
+}
+
+.featured {
+  max-width: 800px;
+}
+
+.legal {
+  max-width: calc(480px + 2 * 18px);
 }
 
 .featured h1 {
