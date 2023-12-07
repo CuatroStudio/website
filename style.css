@@ -74,8 +74,8 @@ nav img {
 .featured h1 {
   color: var(--foreground);
   font-weight: 500;
-  font-size: 6em;
-  margin: 24px 0;
+  font-size: 3em;
+  margin: 4px 0;
 }
 
 .featured h3 {
@@ -90,7 +90,7 @@ nav img {
 }
 
 .featured div img {
-  height: 180px;
+  height: 130px;
   margin: 0 40px;
 }
 
@@ -101,6 +101,11 @@ nav img {
 
 .featured div h3 {
   max-width: 640px;
+}
+
+.featured #app-store {
+  height: 40px;
+  margin: 0;
 }
 
 .legal h1 {
@@ -128,7 +133,7 @@ footer {
 
 @media (max-width: 768px) {
   .featured h1 {
-    font-size: 5em;
+    font-size: 2.5em;
   }
   .featured div, footer {
     flex-direction: column;
