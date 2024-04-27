@@ -96,7 +96,7 @@ nav h1 {
   padding-bottom: 60px;
   background: var(--white);
   border-radius: 9px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .featured, .release {
