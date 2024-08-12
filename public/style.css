@@ -329,3 +329,13 @@ span.ogw {
   color: lightgray;
   cursor: not-allowed;
 }
+
+.ogw > div {
+  justify-content: start !important;
+}
+
+div.copy_bundle {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: start !important;
+}

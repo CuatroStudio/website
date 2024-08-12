@@ -1,7 +1,10 @@
+import { FaRegCopy } from "react-icons/fa6"
+
 const Callback = () => {
 	const error: string | null = new URLSearchParams(window.location.search).get('error')
 	const errorMessage = new URLSearchParams(window.location.search).get('error_description')
 	const code = new URLSearchParams(window.location.search).get('code')
+	const state = new URLSearchParams(window.location.search).get('state')
 
 	return <>
 		<nav>
@@ -10,7 +13,7 @@ const Callback = () => {
 			</a>
 		</nav>
 		<main>
-			<div className="featured">
+			<div className="featured ogw">
 				{error &&
 					<div>
 						<div>
@@ -22,8 +25,22 @@ const Callback = () => {
 				{code &&
 					<div>
 						<div>
-							<h1>Code</h1>
-							<p>{code}</p>
+							<h1>Open Gateway</h1>
+							<h3>Auth Code Flow callback result</h3>
+							<div className="copy_bundle">
+								<p>Code: {code}</p>
+								<FaRegCopy
+									onClick={() => navigator.clipboard.writeText(code || '')}
+									style={{ margin: 16, cursor: 'pointer' }}
+								/>
+							</div>
+							<div className="copy_bundle">
+								<p>State: {state}</p>
+								<FaRegCopy
+									onClick={() => navigator.clipboard.writeText(state || '')}
+									style={{ margin: 16, cursor: 'pointer' }}
+								/>
+							</div>
 						</div>
 					</div>
 				}
