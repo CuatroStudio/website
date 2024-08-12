@@ -257,3 +257,75 @@ button.destructive {
   background-color: var(--background);
   color: gray;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 12px auto 6px 6px;
+}
+
+select {
+  font-size: medium;
+  max-width: 378px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid lightgray;
+  font-size: small;
+  -moz-appearance: none; 
+  -webkit-appearance: none;
+}
+
+input[type=url], input[type=tel], input[type=text].ogw {
+  font-size: 0.8em;
+  max-width: 360px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  padding: 6px 8px;
+}
+
+input:invalid {
+  border-color: var(--accent);
+}
+
+button[type=submit] {
+  margin: 45px auto;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+button[type=submit].disabled {
+  background-color: lightgray;
+  color: gray;
+}
+
+div.small_button {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: left !important;
+}
+
+div.small_button input {
+  width: 255px;
+}
+
+div.small_button button {
+  display: inline-block;
+  font-size: small;
+  padding: 5px 10px;
+  margin: 0;
+  margin-left: 10px;
+}
+
+a.ogw, span.ogw {
+  margin-top: 30px;
+  line-break: anywhere;
+  cursor: pointer;
+}
+
+span.ogw {
+  color: lightgray;
+  cursor: not-allowed;
+}
