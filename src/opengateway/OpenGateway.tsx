@@ -63,7 +63,7 @@ const Callback = () => {
 								onChange={e => setPurpose(e.target.value)}
 							>
 								<option value="dpv:FraudPreventionAndDetection#sim-swap">SIM Swap</option>
-								<option value="dpv:FraudPreventionAndDetection%23number-verification-verify-read">Number Verification</option>
+								<option value="dpv:FraudPreventionAndDetection#number-verification-verify-read">Number Verification</option>
 								<option value="dpv:RequestedServiceProvision#qod">Mobile QoD</option>
 								<option value="dpv:RequestedServiceProvision#home-devices-qod">Home Devices QoD</option>
 								<option value="dpv:FraudPreventionAndDetection#location-verification-verify">Device Location</option>
