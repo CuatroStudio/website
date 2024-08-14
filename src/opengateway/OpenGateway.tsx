@@ -6,17 +6,28 @@ const Callback = () => {
 	const [purpose, setPurpose] = useState('dpv:FraudPreventionAndDetection%23sim-swap')
 	const [redirectUri, setRedirectUri] = useState('')
 	const [msisdn, setMsisdn] = useState('')
+	const [state, setState] = useState('')
 	const [isValid, setIsValid] = useState(false)
+	const [stateIsNotMSISDN, setStateIsNotMSISDN] = useState(false)
 
 	const form = useRef<HTMLFormElement | null>(null)
 	const anchor = useRef<HTMLAnchorElement | null>(null)
 
 	const thisSiteRedirectUri = 'https://www.cuatro.studio/ogw/callback'
-	const link = `${environment}/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&purpose=${purpose}&state=${msisdn}`
+	const msisdnParam = msisdn && msisdn.length > 0 ? `&state=${msisdn}` : ''
+	const stateParam = state && state.length > 0 ? `&state=${state}` : ''
+	const lastParam = stateIsNotMSISDN ? stateParam : msisdnParam
+	const link = `${environment}/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&purpose=${purpose}${lastParam}`
 
 	useEffect(() => {
 		setIsValid(form.current?.checkValidity() || false)
 	}, [clientId, redirectUri, msisdn])
+
+	useEffect(() => {
+		if (stateIsNotMSISDN) {
+			setMsisdn('')
+		}
+	}, [stateIsNotMSISDN])
 
 	return <>
 		<nav>
@@ -90,17 +101,43 @@ const Callback = () => {
 								>Use this site's</button>
 							</div>
 
-							<label htmlFor="msisdn">MSISDN</label>
-							<input
-								type="tel"
-								name="msisdn"
-								required
-								pattern="\+[0-9]+$"
-								placeholder="End-user's phone number"
-								title="Starts with + and followed by numbers"
-								value={msisdn}
-								onChange={e => setMsisdn(e.target.value)}
-							/>
+							{!stateIsNotMSISDN && <>
+								<label htmlFor="msisdn">MSISDN (optional state: use it if you need the identifier on your backend)</label>
+								<input
+									type="tel"
+									name="msisdn"
+									pattern="\+[0-9]+$"
+									placeholder="End-user's phone number"
+									title="Starts with + and followed by numbers"
+									value={msisdn}
+									onChange={e => setMsisdn(e.target.value)}
+								/>
+							</>}
+							{stateIsNotMSISDN && <>
+								<label htmlFor="state">State (use it if you need the identifier on your backend)</label>
+								<input
+									type="tel"
+									name="state"
+									placeholder="Whatever state"
+									value={state}
+									onChange={e => setState(e.target.value)}
+								/>
+							</>}
+							<div style={{
+								display: "flex",
+								flexDirection: "row",
+								alignItems: "start",
+								marginTop: 8
+							}}>
+								<input
+									type="checkbox"
+									name="stateIsNotMSISDN"
+									onChange={e => setStateIsNotMSISDN(e.target.checked)}
+								/>
+								<label htmlFor="stateIsNotMSISDN" style={{ marginTop: -2 }}>
+									<small>State is not an MSISDN</small>
+								</label>
+							</div>
 
 							<button
 								type="submit"
