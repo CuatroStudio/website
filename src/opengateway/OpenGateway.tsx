@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react"
 const Callback = () => {
 	const [environment, setEnvironment] = useState('https://auth.es-pro.baikalplatform.com')
 	const [clientId, setClientId] = useState('')
-	const [purpose, setPurpose] = useState('dpv:FraudPreventionAndDetection#sim-swap')
+	const [purpose, setPurpose] = useState('dpv:FraudPreventionAndDetection%23sim-swap')
 	const [redirectUri, setRedirectUri] = useState('')
 	const [msisdn, setMsisdn] = useState('')
 	const [isValid, setIsValid] = useState(false)
@@ -62,14 +62,14 @@ const Callback = () => {
 								name="purpose"
 								onChange={e => setPurpose(e.target.value)}
 							>
-								<option value="dpv:FraudPreventionAndDetection#sim-swap">SIM Swap</option>
-								<option value="dpv:FraudPreventionAndDetection#number-verification-verify-read">Number Verification</option>
-								<option value="dpv:RequestedServiceProvision#qod">Mobile QoD</option>
-								<option value="dpv:RequestedServiceProvision#home-devices-qod">Home Devices QoD</option>
-								<option value="dpv:FraudPreventionAndDetection#location-verification-verify">Device Location</option>
-								<option value="dpv:FraudPreventionAndDetection#device-status-roaming-read">Device Status Roaming</option>
-								<option value="dpv:FraudPreventionAndDetection#kyc-match">KYC</option>
-								<option value="dpv:PaymentManagement#carrier-billing">Carrier Billing</option>
+								<option value="dpv:FraudPreventionAndDetection%23sim-swap">SIM Swap</option>
+								<option value="dpv:FraudPreventionAndDetection%23number-verification-verify-read">Number Verification</option>
+								<option value="dpv:RequestedServiceProvision%23qod">Mobile QoD</option>
+								<option value="dpv:RequestedServiceProvision%23home-devices-qod">Home Devices QoD</option>
+								<option value="dpv:FraudPreventionAndDetection%23location-verification-verify">Device Location</option>
+								<option value="dpv:FraudPreventionAndDetection%23device-status-roaming-read">Device Status Roaming</option>
+								<option value="dpv:FraudPreventionAndDetection%23kyc-match">KYC</option>
+								<option value="dpv:PaymentManagement%23carrier-billing">Carrier Billing</option>
 							</select>
 
 							<label htmlFor="redirect_uri">Redirect URI</label>
