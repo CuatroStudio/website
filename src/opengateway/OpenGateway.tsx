@@ -164,6 +164,29 @@ const Callback = () => {
 								</a>
 							</>}
 						</form>
+						<br />
+						<br />
+						Resources:
+						<br />
+						<small>Save as files with .json extension and import them from Postman</small>
+						<ul>
+							<li><a
+								href="https://bxbucket.blob.core.windows.net/bxbucket/opengateway-web/uploads/OpenGateway.postman_collection.json"
+								download="OpenGateway.postman_collection.json"
+								target="_blank"
+								rel="noreferrer"
+							>
+								Open Gateway APIs Postman collection
+							</a></li>
+							<li><a
+								href="https://bxbucket.blob.core.windows.net/bxbucket/opengateway-web/uploads/OpenGatewaySandbox.postman_environment.json"
+								download="OpenGatewaySandbox.postman_environment.json"
+								target="_blank"
+								rel="noreferrer"
+							>
+								Open Gateway Sandbox Postman environment
+							</a></li>
+						</ul>
 					</div>
 				</div>
 			</div>
