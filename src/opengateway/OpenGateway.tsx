@@ -30,11 +30,11 @@ const Callback = () => {
 	}, [stateIsNotMSISDN])
 
 	return <>
-		<nav>
+		{/* <nav>
 			<a href="/">
 				<img src="/imago.svg" alt="Cuatro Studio" />
 			</a>
-		</nav>
+		</nav> */}
 		<main>
 			<div className="featured">
 				<div>
