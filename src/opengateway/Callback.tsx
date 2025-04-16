@@ -5,7 +5,17 @@ const Callback = () => {
 	const errorMessage = new URLSearchParams(window.location.search).get('error_description')
 	const code = new URLSearchParams(window.location.search).get('code')
 	const state = new URLSearchParams(window.location.search).get('state')
-
+	try {
+		if (state) {
+			const decodedState = JSON.parse(atob(state))
+			if (decodedState) {
+				const queryString = window.location.search
+				window.location.href = `http://localhost:3000/callback${queryString}`
+			}
+		}
+	} catch (error) {
+		console.error("Failed to decode or parse state:", error)
+	}
 	return <>
 		{/* <nav>
 			<a href="/">
