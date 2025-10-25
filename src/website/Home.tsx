@@ -7,6 +7,23 @@ const Home = () => {
 		</nav>
 		<main>
 			<div className="featured">
+				<h3>Soon available</h3>
+				<div>
+					<img src="/week/logo.png" alt="Week Number" width={120} height={120} />
+					<div>
+						<a href="week">
+							<h1>Week Number</h1>
+						</a>
+						<p>
+							Never guess the week again. See the current week number with three clean widgets to choose from—perfect for sprints, schedules, deadlines, and everything in between
+						</p>
+						{/* <a href="https://apps.apple.com/es/app/tildone/id6473126292" target="_blank" rel="noreferrer">
+							<img src="/appstore.svg" alt="App Store" id="app-store" />
+						</a> */}
+					</div>
+				</div>
+			</div>
+			<div className="featured">
 				<h3>Latest release</h3>
 				<div>
 					<img src="/tildone.svg" alt="Tildone" />
