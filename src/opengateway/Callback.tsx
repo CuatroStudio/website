@@ -17,11 +17,6 @@ const Callback = () => {
 		console.error("Failed to decode or parse state:", error)
 	}
 	return <>
-		{/* <nav>
-			<a href="/">
-				<img src="/imago.svg" alt="Cuatro Studio" />
-			</a>
-		</nav> */}
 		<main>
 			<div className="featured ogw">
 				{error &&
