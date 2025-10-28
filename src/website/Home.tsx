@@ -17,9 +17,9 @@ const Home = () => {
 						<p>
 							Never guess the week again. See the current week number with three clean widgets to choose from—perfect for sprints, schedules, deadlines, and everything in between
 						</p>
-						{/* <a href="https://apps.apple.com/es/app/tildone/id6473126292" target="_blank" rel="noreferrer">
+						<a href="https://apps.apple.com/app/week-number-widgets/id6754349400" target="_blank" rel="noreferrer">
 							<img src="/appstore.svg" alt="App Store" id="app-store" />
-						</a> */}
+						</a>
 					</div>
 				</div>
 			</div>
@@ -35,7 +35,7 @@ const Home = () => {
 							Sticky notes on your Mac for stuff you want to have in front of you until you are done.
 							As simple as you would do with actual notes.
 						</p>
-						<a href="https://apps.apple.com/es/app/tildone/id6473126292" target="_blank" rel="noreferrer">
+						<a href="https://apps.apple.com/app/tildone/id6473126292" target="_blank" rel="noreferrer">
 							<img src="/appstore.svg" alt="App Store" id="app-store" />
 						</a>
 					</div>
