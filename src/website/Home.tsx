@@ -7,7 +7,7 @@ const Home = () => {
 		</nav>
 		<main>
 			<div className="featured">
-				<h3>Soon available</h3>
+				<h3>Latest release</h3>
 				<div>
 					<img src="/week/logo.png" alt="Week Number" width={120} height={120} />
 					<div>
@@ -24,7 +24,7 @@ const Home = () => {
 				</div>
 			</div>
 			<div className="featured">
-				<h3>Latest release</h3>
+				<h3>Discover more</h3>
 				<div>
 					<img src="/tildone.svg" alt="Tildone" />
 					<div>
