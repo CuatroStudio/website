@@ -24,9 +24,26 @@ const Home = () => {
 				</div>
 			</div>
 			<div className="featured">
+				<h3>Coming soon</h3>
+				<div>
+					<img src="/better/logo.svg" alt="Better Clipboard" width={120} height={120} />
+					<div>
+						<a href="better">
+							<h1>Better Clipboard</h1>
+						</a>
+						<p>
+							Clipboard history with pins, previews, and fast search in a floating menu bar window for macOS.
+						</p>
+						<a href="better" className="secondary">
+							Learn more
+						</a>
+					</div>
+				</div>
+			</div>
+			<div className="featured">
 				<h3>Discover more</h3>
 				<div>
-					<img src="/tildone.svg" alt="Tildone" />
+					<img src="/tildone.svg" alt="Tildone" width={120} height={120} />
 					<div>
 						<a href="tildone">
 							<h1>Tildone</h1>
