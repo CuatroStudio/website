@@ -9,7 +9,7 @@ const Home = () => {
 			<div className="featured">
 				<h3>Latest release</h3>
 				<div>
-					<img src="/better/logo.svg" alt="Better Clipboard" width={120} height={120} />
+					<img src="/better/logo.png" alt="Better Clipboard" width={120} height={120} />
 					<div>
 						<a href="better">
 							<h1>Better Clipboard</h1>
