@@ -9,6 +9,23 @@ const Home = () => {
 			<div className="featured">
 				<h3>Latest release</h3>
 				<div>
+					<img src="/better/logo.svg" alt="Better Clipboard" width={120} height={120} />
+					<div>
+						<a href="better">
+							<h1>Better Clipboard</h1>
+						</a>
+						<p>
+							Clipboard history with pins, previews, and fast search in a floating menu bar window for macOS.
+						</p>
+						<a href="https://apps.apple.com/app/better-clipboard/id6756281636" target="_blank" rel="noreferrer">
+							<img src="/appstore.svg" alt="App Store" id="app-store" />
+						</a>
+					</div>
+				</div>
+			</div>
+			<div className="featured">
+				<h3>Discover more</h3>
+				<div>
 					<img src="/week/logo.png" alt="Week Number" width={120} height={120} />
 					<div>
 						<a href="week">
@@ -19,23 +36,6 @@ const Home = () => {
 						</p>
 						<a href="https://apps.apple.com/app/week-number-widgets/id6754349400" target="_blank" rel="noreferrer">
 							<img src="/appstore.svg" alt="App Store" id="app-store" />
-						</a>
-					</div>
-				</div>
-			</div>
-			<div className="featured">
-				<h3>Coming soon</h3>
-				<div>
-					<img src="/better/logo.svg" alt="Better Clipboard" width={120} height={120} />
-					<div>
-						<a href="better">
-							<h1>Better Clipboard</h1>
-						</a>
-						<p>
-							Clipboard history with pins, previews, and fast search in a floating menu bar window for macOS.
-						</p>
-						<a href="better" className="secondary">
-							Learn more
 						</a>
 					</div>
 				</div>
