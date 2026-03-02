@@ -28,6 +28,16 @@
     <main>
         <div class="release">
             <h3>Latest release</h3>
+            <h4>Translate selected text from other apps into your Mac languages with a keyboard shortcut</h4>
+            <figure style="text-align: center;">
+                <video class="preview-video" controls playsinline preload="metadata" muted autoplay width="600" height="375">
+                    <source src="/better/screenshots/Screenshot%207.webm" type="video/webm">
+                    Your browser doesn’t support HTML5 video.
+                </video>
+            </figure>
+        </div> 
+        <div class="release">
+            <h3>Launch release</h3>
             <h4>Clipboard history, pins, previews</h4>
             <p>
                 Better Clipboard is a fast clipboard app and manager for macOS that saves your copy and paste history in a floating window. Instantly browse, search, and pin clipboard items using a keyboard shortcut or menu bar icon. Built for speed, focus, and everyday productivity on macOS.
@@ -54,8 +64,10 @@
                 The free version stores up to 10 clipboard entries and allows up to 3 pinned items. Unlock Better Clipboard Pro for unlimited history and unlimited pins.
             </p>
             <figure style="text-align: center;">
-                <a href="/better/screenshots/Screenshot%201.png" target="_blank">
-                    <img src="/better/screenshots/Screenshot%201.png" alt="Better Clipboard screenshot 1" width="600" style="max-width: 100%; height: auto;" />
+                <video class="preview-video" controls playsinline preload="metadata" muted autoplay width="600" height="375">
+                    <source src="/better/screenshots/Screenshot%201.webm" type="video/webm">
+                    Your browser doesn’t support HTML5 video.
+                </video>
                 </a>
             </figure>
             <figure style="text-align: center;">
@@ -84,13 +96,13 @@
                 </a>
             </figure>
             <figure style="text-align: center;">
-                <a href="/better/screenshots/Screenshot%207.png" target="_blank">
-                    <img src="/better/screenshots/Screenshot%207.png" alt="Better Clipboard screenshot 7" width="600" style="max-width: 100%; height: auto;" />
+                <a href="/better/screenshots/Screenshot%208.png" target="_blank">
+                    <img src="/better/screenshots/Screenshot%208.png" alt="Better Clipboard screenshot 8" width="600" style="max-width: 100%; height: auto;" />
                 </a>
             </figure>
             <figure style="text-align: center;">
-                <a href="/better/screenshots/Screenshot%208.png" target="_blank">
-                    <img src="/better/screenshots/Screenshot%208.png" alt="Better Clipboard screenshot 8" width="600" style="max-width: 100%; height: auto;" />
+                <a href="/better/screenshots/Screenshot%209.png" target="_blank">
+                    <img src="/better/screenshots/Screenshot%209.png" alt="Better Clipboard screenshot 9" width="600" style="max-width: 100%; height: auto;" />
                 </a>
             </figure>
         </div>
@@ -107,6 +119,66 @@
             Privacy
         </a>
     </footer>
+
+    <script>
+        (function () {
+            var previewTimeInSeconds = 4;
+            var videos = document.querySelectorAll('.preview-video');
+
+            function getPreviewTime(video) {
+                if (!Number.isFinite(video.duration) || video.duration <= 0) {
+                    return previewTimeInSeconds;
+                }
+
+                return Math.min(previewTimeInSeconds, Math.max(video.duration - 0.05, 0));
+            }
+
+            function setPreviewFrame(video) {
+                if (video.readyState < 1) {
+                    return;
+                }
+
+                var target = getPreviewTime(video);
+                if (Math.abs(video.currentTime - target) < 0.05) {
+                    return;
+                }
+
+                video.currentTime = target;
+            }
+
+            function autoplayFromStart(video) {
+                if (video.readyState < 1) {
+                    return;
+                }
+
+                video.currentTime = 0;
+                var playPromise = video.play();
+                if (playPromise && typeof playPromise.catch === 'function') {
+                    playPromise.catch(function () {
+                        setPreviewFrame(video);
+                    });
+                }
+            }
+
+            videos.forEach(function (video) {
+                video.addEventListener('pause', function () {
+                    setPreviewFrame(video);
+                });
+
+                video.addEventListener('ended', function () {
+                    setPreviewFrame(video);
+                });
+
+                if (video.readyState >= 1) {
+                    autoplayFromStart(video);
+                } else {
+                    video.addEventListener('loadedmetadata', function () {
+                        autoplayFromStart(video);
+                    }, { once: true });
+                }
+            });
+        })();
+    </script>
 
 </body>
 
