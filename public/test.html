@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Pagination</title>
+    <style>
+      :root {
+        color-scheme: light;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background: linear-gradient(180deg, #f5f7fb 0%, #ffffff 100%);
+        color: #111827;
+        display: flex;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1;
+        display: grid;
+        place-items: center;
+        padding: 2rem;
+      }
+
+      #page-number {
+        margin: 0;
+        font-size: clamp(6rem, 25vw, 18rem);
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -0.04em;
+      }
+
+      .pagination {
+        position: sticky;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1.25rem 1rem 1.5rem;
+        background: rgba(255, 255, 255, 0.92);
+        border-top: 1px solid #e5e7eb;
+        backdrop-filter: blur(8px);
+      }
+
+      button {
+        border: 1px solid #d1d5db;
+        background: #ffffff;
+        color: #111827;
+        border-radius: 10px;
+        padding: 0.65rem 1rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      button:hover:not(:disabled) {
+        background: #f9fafb;
+      }
+
+      button:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
+
+      #page-count {
+        min-width: 5.5rem;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1 id="page-number">1</h1>
+    </main>
+
+    <nav class="pagination" aria-label="Pagination">
+      <button id="prev" type="button">Previous</button>
+      <span id="page-count">1 of 10</span>
+      <button id="next" type="button">Next</button>
+    </nav>
+
+    <script>
+      (function () {
+        var totalPages = 10;
+        var currentPage = 1;
+        var pageNumber = document.getElementById('page-number');
+        var pageCount = document.getElementById('page-count');
+        var prevButton = document.getElementById('prev');
+        var nextButton = document.getElementById('next');
+
+        function render() {
+          pageNumber.textContent = String(currentPage);
+          pageCount.textContent = currentPage + ' of ' + totalPages;
+          prevButton.disabled = currentPage === 1;
+          nextButton.disabled = currentPage === totalPages;
+        }
+
+        prevButton.addEventListener('click', function () {
+          if (currentPage > 1) {
+            currentPage -= 1;
+            render();
+          }
+        });
+
+        nextButton.addEventListener('click', function () {
+          if (currentPage < totalPages) {
+            currentPage += 1;
+            render();
+          }
+        });
+
+        render();
+      })();
+    </script>
+  </body>
+</html>
