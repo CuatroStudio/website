@@ -161,6 +161,15 @@ nav.family h1 {
   margin: 0;
 }
 
+.featured.product-box {
+  transition: background-color 0.2s ease;
+}
+
+.featured.product-box:hover {
+  background-color: #1CC8DB66;
+  cursor: pointer;
+}
+
 .release ul, p {
   font-weight: lighter;
 }

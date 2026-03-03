@@ -6,7 +6,13 @@ const Home = () => {
 			</a>
 		</nav>
 		<main>
-			<div className="featured">
+			<div
+				className="featured product-box"
+				onClick={(event) => {
+					if ((event.target as HTMLElement).closest("a")) return
+					window.location.href = "better"
+				}}
+			>
 				<h3>Latest release</h3>
 				<div>
 					<img src="/better/logo.png" alt="Better Clipboard" width={120} height={120} />
@@ -23,7 +29,13 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			<div className="featured">
+			<div
+				className="featured product-box"
+				onClick={(event) => {
+					if ((event.target as HTMLElement).closest("a")) return
+					window.location.href = "week"
+				}}
+			>
 				<h3>Discover more</h3>
 				<div>
 					<img src="/week/logo.png" alt="Week Number" width={120} height={120} />
@@ -40,7 +52,13 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			<div className="featured">
+			<div
+				className="featured product-box"
+				onClick={(event) => {
+					if ((event.target as HTMLElement).closest("a")) return
+					window.location.href = "tildone"
+				}}
+			>
 				<h3>Discover more</h3>
 				<div>
 					<img src="/tildone.svg" alt="Tildone" width={120} height={120} />
