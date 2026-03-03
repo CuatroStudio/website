@@ -23,9 +23,14 @@ const Home = () => {
 						<p>
 							Clipboard history with pins, previews, and fast search in a floating menu bar window for macOS.
 						</p>
-						<a href="https://apps.apple.com/app/better-clipboard/id6756281636" target="_blank" rel="noreferrer">
-							<img src="/appstore.svg" alt="App Store" id="app-store" />
-						</a>
+						<div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'left' }}>
+							<a href="https://apps.apple.com/app/better-clipboard/id6756281636" target="_blank" rel="noreferrer">
+								<img src="/appstore.svg" alt="App Store" id="app-store" />
+							</a>
+							<a href="https://www.producthunt.com/products/better-clipboard?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-better-clipboard" target="_blank" rel="noreferrer">
+								<img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1088764&amp;theme=light&amp;t=1772549590931" alt="Better&#0032;Clipboard - Smarter&#0032;copy&#0045;paste&#0032;for&#0032;macOS&#0046;&#0032;New&#0032;version&#0033; | Product Hunt" width={184} style={{ maxHeight: 56, marginLeft: 18, marginTop: -8 }} />
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
