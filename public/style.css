@@ -215,19 +215,37 @@ nav.family h1 {
 
 footer {
   display: flex;
-  height: 50px;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 50px;
   margin-top: auto;
   padding: 30px;
   text-align: center;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-row:last-child {
+  flex-direction: column;
+}
+
+.footer-row:last-child span {
+  font-size: smaller;
+  margin-bottom: -9px;
 }
 
 @media (max-width: 768px) {
   .featured h1 {
     font-size: 2.5em;
   }
-  .featured div, footer {
+  .featured div, footer, .footer-row {
     flex-direction: column;
   }
   nav {
