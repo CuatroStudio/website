@@ -18,6 +18,10 @@
     }
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -110,6 +114,7 @@ nav.family h1 {
 }
 
 .featured, .legal, .release {
+  width: min(800px, calc(100% - 40px));
   padding: 36px;
   padding-bottom: 60px;
   margin: 20px auto;
@@ -123,7 +128,7 @@ nav.family h1 {
 }
 
 .legal {
-  max-width: calc(480px + 2 * 18px);
+  max-width: calc(480px + 36px);
 }
 
 .featured h1 {
@@ -243,26 +248,92 @@ footer {
 
 @media (max-width: 768px) {
   .featured h1 {
-    font-size: 2.5em;
+    font-size: clamp(2rem, 10vw, 2.5em);
+    line-height: 1.05;
   }
   .featured div, footer, .footer-row {
     flex-direction: column;
   }
   nav {
     flex-direction: column;
-    height: 180px;
+    height: auto;
   }
   nav div {
     display: flex;
     flex-direction: row;
-    padding: 24px 12px;
+    align-items: center;
+    padding: 16px 20px 0;
+  }
+  nav a {
+    height: auto;
+  }
+  nav img {
+    position: static;
+    height: 52px;
+    margin: 24px 0 0 20px;
+  }
+  nav img.product {
+    height: 48px;
+    margin: 0;
+  }
+  nav h1 {
+    font-size: clamp(1.9rem, 9vw, 2.6rem);
+    margin: 0 0 0 16px;
+    padding-top: 0;
   }
   div.separator {
     display: none;
   }
+  .featured, .legal, .release {
+    width: calc(100% - 24px);
+    padding: 24px;
+    margin: 12px auto;
+  }
+  .featured.product-box {
+    width: 100%;
+    border-radius: 0;
+    margin: 12px 0;
+  }
+  .release {
+    width: 100%;
+    border-radius: 0;
+    margin: 12px 0;
+  }
+  .release figure {
+    width: calc(100% + 24px);
+    margin-left: -12px;
+  }
+  .featured div {
+    align-items: flex-start;
+  }
+  .featured div img {
+    max-width: 100%;
+    margin: 0 0 20px;
+  }
+  .featured #app-store {
+    width: min(240px, 100%);
+    height: auto;
+  }
   .screenshots {
     flex-direction: column !important;
-    margin-left: -36px;
+    margin-left: 0;
+  }
+  .release div.screenshots figure {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  .release div.screenshots figure img {
+    min-height: 0;
+    max-height: none;
+    width: 100%;
+  }
+  .release figure video {
+    width: 100% !important;
+    max-width: 100%;
+    height: auto;
+  }
+  footer {
+    padding: 24px 16px 32px;
   }
 }
 
