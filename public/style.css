@@ -175,6 +175,27 @@ nav.family h1 {
   cursor: pointer;
 }
 
+.featured.product-box.upcoming {
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+}
+
+.featured.product-box.upcoming:hover {
+  background-color: color-mix(in srgb, var(--accent) 12%, var(--white));
+}
+
+.product-status {
+  display: inline-flex;
+  align-self: flex-start;
+  margin-top: 6px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
 .release ul, p {
   font-weight: lighter;
 }

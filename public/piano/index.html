@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>cuatro.studio</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@700&family=Lato:wght@200;300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav>
+        <a href="/">
+            <img src="/imago.svg" alt="Cuatro Studio" />
+        </a>
+        <div class="separator"></div>
+        <div>
+            <img src="/piano/logo.png" alt="Piano Glide" class="product" />
+            <h1>Piano Glide</h1>
+        </div>
+    </nav>
+
+    <main>
+        <div class="release">
+            <h3>Coming next</h3>
+            <h4>Piano practice on macOS with falling notes, MIDI input, and a built-in library to keep the session moving.</h4>
+            <p>
+                Piano Glide is an upcoming macOS app focused on practice flow: connect a MIDI keyboard, load a song, and follow the music with a responsive falling-note view while tracking timing and streaks.
+            </p>
+            <p>
+                It is not in the store yet. This page is an early preview of what is coming next from Cuatro Studio.
+            </p>
+            <span class="product-status">Upcoming product</span>
+        </div>
+
+        <div class="release">
+            <h3>Early preview</h3>
+            <h4>What Piano Glide is built for</h4>
+            <ul>
+                <li>Practice piano pieces with a visual falling-note playback view</li>
+                <li>Play with a connected MIDI keyboard on macOS</li>
+                <li>Learn from a built-in song library and import MIDI songs</li>
+                <li>Track performance with timing, streak, and progress feedback</li>
+            </ul>
+            <figure style="text-align: center;">
+                <video class="preview-video" controls playsinline preload="metadata" muted autoplay width="600" height="338">
+                    <source src="/piano/pianoglide-preview-1.webm" type="video/webm">
+                    <source src="/piano/pianoglide-preview-1.mp4" type="video/mp4">
+                    Your browser doesn’t support HTML5 video.
+                </video>
+            </figure>
+            <figure style="text-align: center;">
+                <video class="preview-video" controls playsinline preload="metadata" muted autoplay width="600" height="338">
+                    <source src="/piano/pianoglide-preview-2.webm" type="video/webm">
+                    <source src="/piano/pianoglide-preview-2.mp4" type="video/mp4">
+                    Your browser doesn’t support HTML5 video.
+                </video>
+            </figure>
+        </div>
+    </main>
+
+    <div data-site-footer></div>
+    <script src="/footer.js"></script>
+
+    <script>
+        (function () {
+            var previewTimeInSeconds = 4;
+            var videos = document.querySelectorAll('.preview-video');
+
+            function getPreviewTime(video) {
+                if (!Number.isFinite(video.duration) || video.duration <= 0) {
+                    return previewTimeInSeconds;
+                }
+
+                return Math.min(previewTimeInSeconds, Math.max(video.duration - 0.05, 0));
+            }
+
+            function setPreviewFrame(video) {
+                if (video.readyState < 1) {
+                    return;
+                }
+
+                var target = getPreviewTime(video);
+                if (Math.abs(video.currentTime - target) < 0.05) {
+                    return;
+                }
+
+                video.currentTime = target;
+            }
+
+            function autoplayFromStart(video) {
+                if (video.readyState < 1) {
+                    return;
+                }
+
+                video.currentTime = 0;
+                var playPromise = video.play();
+                if (playPromise && typeof playPromise.catch === 'function') {
+                    playPromise.catch(function () {
+                        setPreviewFrame(video);
+                    });
+                }
+            }
+
+            videos.forEach(function (video) {
+                video.addEventListener('pause', function () {
+                    setPreviewFrame(video);
+                });
+
+                video.addEventListener('ended', function () {
+                    setPreviewFrame(video);
+                });
+
+                if (video.readyState >= 1) {
+                    autoplayFromStart(video);
+                } else {
+                    video.addEventListener('loadedmetadata', function () {
+                        autoplayFromStart(video);
+                    }, { once: true });
+                }
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

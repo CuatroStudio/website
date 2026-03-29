@@ -35,6 +35,27 @@ const Home = () => {
 				</div>
 			</div>
 			<div
+				className="featured product-box upcoming"
+				onClick={(event) => {
+					if ((event.target as HTMLElement).closest("a")) return
+					window.location.href = "piano"
+				}}
+			>
+				<h3>Coming next</h3>
+				<div>
+					<img src="/piano/logo.png" alt="Piano Glide" width={120} height={120} />
+					<div>
+						<a href="piano">
+							<h1>Piano Glide</h1>
+						</a>
+						<p>
+							A macOS piano practice studio with falling-note playback, MIDI keyboard input, and a built-in song library for learning pieces with flow.
+						</p>
+						<span className="product-status">Upcoming product</span>
+					</div>
+				</div>
+			</div>
+			<div
 				className="featured product-box"
 				onClick={(event) => {
 					if ((event.target as HTMLElement).closest("a")) return
