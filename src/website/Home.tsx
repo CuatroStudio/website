@@ -10,10 +10,33 @@ const Home = () => {
 				className="featured product-box"
 				onClick={(event) => {
 					if ((event.target as HTMLElement).closest("a")) return
-					window.location.href = "better"
+					window.location.href = "piano"
 				}}
 			>
 				<h3>Latest release</h3>
+				<div>
+					<img src="/piano/logo.png" alt="Piano Glide" width={120} height={120} />
+					<div>
+						<a href="piano">
+							<h1>Piano Glide</h1>
+						</a>
+						<p>
+							A macOS piano practice studio with falling-note playback, MIDI keyboard input, and a built-in song library for learning pieces with flow.
+						</p>
+						<a href="https://apps.apple.com/es/app/piano-glide/id6761230770" target="_blank" rel="noreferrer">
+							<img src="/appstore.svg" alt="App Store" id="app-store" />
+						</a>
+					</div>
+				</div>
+			</div>
+			<div
+				className="featured product-box"
+				onClick={(event) => {
+					if ((event.target as HTMLElement).closest("a")) return
+					window.location.href = "better"
+				}}
+			>
+				<h3>Discover more</h3>
 				<div>
 					<img src="/better/logo.png" alt="Better Clipboard" width={120} height={120} />
 					<div>
@@ -31,27 +54,6 @@ const Home = () => {
 								<img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1088764&amp;theme=light&amp;t=1772549590931" alt="Better&#0032;Clipboard - Smarter&#0032;copy&#0045;paste&#0032;for&#0032;macOS&#0046;&#0032;New&#0032;version&#0033; | Product Hunt" width={184} style={{ maxHeight: 56, marginLeft: 18, marginTop: -8 }} />
 							</a>
 						</div>
-					</div>
-				</div>
-			</div>
-			<div
-				className="featured product-box upcoming"
-				onClick={(event) => {
-					if ((event.target as HTMLElement).closest("a")) return
-					window.location.href = "piano"
-				}}
-			>
-				<h3>Coming next</h3>
-				<div>
-					<img src="/piano/logo.png" alt="Piano Glide" width={120} height={120} />
-					<div>
-						<a href="piano">
-							<h1>Piano Glide</h1>
-						</a>
-						<p>
-							A macOS piano practice studio with falling-note playback, MIDI keyboard input, and a built-in song library for learning pieces with flow.
-						</p>
-						<span className="product-status">Upcoming product</span>
 					</div>
 				</div>
 			</div>
