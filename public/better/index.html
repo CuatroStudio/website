@@ -3,9 +3,10 @@
 <html lang="en">
 
 <head>
-    <title>cuatro.studio</title>
+    <title>Better Clipboard - Visual Clipboard Manager for macOS</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"> 
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
+    <meta name="description" content="Better Clipboard is a visual clipboard manager for macOS with history, pins, search, rich previews, and translation where supported by macOS.">
     <link rel="stylesheet" href="/style.css">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 	<link rel="preconnect" href="https://fonts.gstatic.com"> 
@@ -26,10 +27,20 @@
     </nav>
 
     <main>
-        <div class="release">
-            <h3>Latest release</h3>
-            <h4>Translate selected text from other apps into your Mac languages with a keyboard shortcut</h4>
-            <div style="display: flex; flex-direction: row; justify-content: left; margin-bottom: 48px;">
+        <div class="release hero-release">
+            <h3>Clipboard manager for macOS</h3>
+            <h4>Clipboard history made easier to scan, search, and reuse.</h4>
+            <p>
+                Better Clipboard keeps recent copies in a fast floating window with visual previews, pins, search, and keyboard access, so text, links, images, code, and emojis are ready when you need them again.
+            </p>
+            <ul class="quick-points">
+                <li>Browse and search clipboard history without switching context</li>
+                <li>Pin important clips and preview links, images, code, and emojis</li>
+                <li>Translate selected text where Apple Intelligence translation is supported by macOS</li>
+            </ul>
+            <div class="cta-row">
+                <a class="primary-cta" href="https://apps.apple.com/app/better-clipboard/id6756281636" target="_blank" rel="noreferrer">Download for Mac</a>
+                <a class="secondary-cta" href="#release-log">See release log</a>
                 <a href="https://apps.apple.com/app/better-clipboard/id6756281636" target="_blank" rel="noreferrer">
                     <img src="/appstore.svg" alt="App Store" id="app-store" />
                 </a>
@@ -44,40 +55,62 @@
                 </video>
             </figure>
         </div> 
+
         <div class="release">
+            <h3>Why it is different</h3>
+            <h4>A visual clipboard, not a plain list</h4>
+            <ul>
+                <li>Animated cards make copied items faster to recognize than rows of text.</li>
+                <li>Menu bar and keyboard access keep the clipboard close without taking over your screen.</li>
+                <li>Translation and rewriting use macOS system capabilities where available, with no cloud processing by Better Clipboard.</li>
+            </ul>
+            <h4>Free vs Pro</h4>
+            <p>
+                The free version stores up to 10 clipboard entries and allows up to 3 pinned items. Unlock Better Clipboard Pro for unlimited history and unlimited pins.
+            </p>
+        </div>
+
+        <div class="release" id="release-log">
+            <h3>Latest release: v1.4</h3>
+            <h4>Privacy controls, stronger pins, and faster translation</h4>
+            <ul>
+                <li>Improved translation performance and fixed restoring text with <code>⌘U</code> after translation</li>
+                <li>Added sensitive data detection, privacy controls, and safer history display</li>
+                <li>Added manual sensitivity overrides and more compact controls on clipboard entries</li>
+                <li>Added inline pinned titles and searchable pin metadata</li>
+                <li>Refined translation input near overlay actions</li>
+            </ul>
+
+            <h3>Previous release: v1.3.1</h3>
+            <h4>Polish for shortcuts, rich text, previews, and settings</h4>
+            <ul>
+                <li>Bug fixes related to keyboard shortcuts for clipboard entry card actions</li>
+                <li>Preserve rich text when copying from Better, with app-specific paste defaults where plain text is preferred</li>
+                <li>Choose which languages appear in Translation Mode</li>
+                <li>Ignore clipboard entries from selected apps</li>
+                <li>Improved previews for checklists, code, and images</li>
+            </ul>
+            <figure style="text-align: center;">
+                <video class="preview-video" controls playsinline preload="metadata" muted autoplay width="600" height="375">
+                    <source src="/better/screenshots/Screenshot%201.webm" type="video/webm">
+                    Your browser doesn’t support HTML5 video.
+                </video>
+            </figure>
+            <h3>Previous release: v1.2</h3>
+            <h4>Translate selected text from other apps into your Mac languages with a keyboard shortcut</h4>
+            <p>
+                Pick from translation languages downloaded on your Mac and paste instantly. Translation requires macOS 15+ and a supported Mac/system configuration.
+            </p>
             <h3>Launch release</h3>
             <h4>Clipboard history, pins, previews</h4>
-            <p>
-                Better Clipboard is a fast clipboard app and manager for macOS that saves your copy and paste history in a floating window. Instantly browse, search, and pin clipboard items using a keyboard shortcut or menu bar icon. Built for speed, focus, and everyday productivity on macOS.
-            </p>
-            <p>
-                You choose what to copy. Better Clipboard helps you keep it, reuse it, and make it better when you need to. On supported Macs, Better Clipboard can trigger Apple Intelligence system features such as rewriting and translation. All processing is handled by macOS. No cloud processing. Translation is available on macOS 15+ where supported.
-            </p>
-            <p>
-                Better Clipboard is a lightweight clipboard app designed for daily macOS workflows. Unlike basic clipboard tools, Better Clipboard shows your history as animated cards instead of plain lists, making it faster to scan and easier to use. Instantly paste text, emojis, images, and programming code you copied earlier without re-copying or switching apps.
-            </p>
-            <h4>Features</h4>
             <ul>
                 <li>Quickly revisit recent copies or search your full copy history</li>
                 <li>Paste any previous copy, not just the most recent one</li>
                 <li>Copy and paste text, links, images, emojis, and code</li>
                 <li>Link previews using website meta tags</li>
                 <li>Inline images and readable code snippets</li>
-                <li>Emojis are shown as large, easy-to-recognize images</li>
                 <li>Keyboard shortcuts for faster paste</li>
-                <li>Menu bar access with lightweight performance</li>
             </ul>
-            <h4>Free vs Pro</h4>
-            <p>
-                The free version stores up to 10 clipboard entries and allows up to 3 pinned items. Unlock Better Clipboard Pro for unlimited history and unlimited pins.
-            </p>
-            <figure style="text-align: center;">
-                <video class="preview-video" controls playsinline preload="metadata" muted autoplay width="600" height="375">
-                    <source src="/better/screenshots/Screenshot%201.webm" type="video/webm">
-                    Your browser doesn’t support HTML5 video.
-                </video>
-                </a>
-            </figure>
             <figure style="text-align: center;">
                 <a href="/better/screenshots/Screenshot%202.png" target="_blank">
                     <img src="/better/screenshots/Screenshot%202.png" alt="Better Clipboard screenshot 2" width="600" style="max-width: 100%; height: auto;" />
