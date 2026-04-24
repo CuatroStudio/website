@@ -7,7 +7,7 @@ const Home = () => {
 		</nav>
 		<main>
 			<div
-				className="featured product-box"
+				className="featured product-box piano-card"
 				onClick={(event) => {
 					if ((event.target as HTMLElement).closest("a")) return
 					window.location.href = "piano"
@@ -20,12 +20,19 @@ const Home = () => {
 						<a href="piano">
 							<h1>Piano Glide</h1>
 						</a>
+						<h2>Turn your MIDI keyboard into a piano rhythm game.</h2>
 						<p>
-							A macOS piano practice studio with falling-note playback, MIDI keyboard input, and a built-in song library for learning pieces with flow.
+							A macOS MIDI piano app for playing real songs with falling notes, instant play, and timing, accuracy, and progress feedback.
 						</p>
-						<a href="https://apps.apple.com/es/app/piano-glide/id6761230770" target="_blank" rel="noreferrer">
-							<img src="/appstore.svg" alt="App Store" id="app-store" />
-						</a>
+						<ul>
+							<li>Real MIDI keyboard practice</li>
+							<li>Rhythm-game-like flow</li>
+							<li>Free to try, Pro unlock available</li>
+						</ul>
+						<div className="home-card-cta">
+							<a className="primary-cta" href="https://apps.apple.com/es/app/piano-glide/id6761230770" target="_blank" rel="noreferrer">Try Piano Glide Free</a>
+							<a className="secondary-cta" href="piano">See how it works</a>
+						</div>
 					</div>
 				</div>
 			</div>
