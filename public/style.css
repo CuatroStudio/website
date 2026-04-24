@@ -2,19 +2,27 @@
   --accent: rgb(23, 158, 173);
   --secondary: #8D8D8D;
   --foreground: rgb(46, 49, 52);
-  --background: rgb(238, 238, 238);
+  --background: rgb(244, 245, 246);
   --title: rgb(86, 93, 100);
   --black: rgb(33, 33, 33);
   --white: rgb(250, 250, 250);
+  --surface: rgb(255, 255, 255);
+  --surface-alt: rgb(248, 249, 250);
+  --line: rgba(46, 49, 52, 0.1);
+  --shadow: 0 18px 45px rgba(18, 29, 36, 0.08);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground: rgb(238, 238, 238);
-    --background: rgb(46, 49, 52);
+    --background: rgb(35, 38, 40);
     --title: rgb(206, 206, 206);
     --black: rgb(250, 250, 250);
-    --white: rgb(33, 33, 33);
+    --white: rgb(31, 33, 35);
+    --surface: rgb(31, 33, 35);
+    --surface-alt: rgb(38, 41, 43);
+    --line: rgba(238, 238, 238, 0.12);
+    --shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
     }
 }
 
@@ -27,9 +35,11 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: Lato;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
   color: var(--foreground);
   background-color: var(--background);
+  background-image:
+  linear-gradient(180deg, color-mix(in srgb, var(--surface-alt) 70%, transparent), transparent 420px);
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -51,8 +61,9 @@ main {
 
 h1 {
   font-size: 2.6em;
-  font-weight: 700;
-  font-family: Mukta;
+  font-weight: 650;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -0.035em;
   color: var(--accent);
   line-height: 35px;
   padding-top: 6px;
@@ -113,14 +124,61 @@ nav.family h1 {
   margin: 36px 0px 36px 50px;
 }
 
+.site-home {
+  width: min(1160px, calc(100% - 72px));
+  margin: -18px auto 48px;
+}
+
+.studio-hero {
+  padding: 10px 0 26px;
+  margin-left: calc(36px - max(36px, ((100vw - 1160px) / 2)));
+  text-align: left;
+}
+
+.studio-hero-copy {
+  margin-left: 0;
+  text-align: left;
+}
+
+.studio-hero h1 {
+  max-width: 780px;
+  margin: 0;
+  padding: 0;
+  color: var(--foreground);
+  font-size: clamp(3rem, 8vw, 5.4rem);
+  font-weight: 650;
+  letter-spacing: -0.055em;
+  line-height: 0.96;
+}
+
+.studio-hero h2 {
+  max-width: 620px;
+  margin: 24px 0 0;
+  color: var(--title);
+  font-size: clamp(1.15rem, 3vw, 1.45rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.42;
+}
+
+.product-showcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+  padding: 4px 0 22px;
+}
+
 .featured, .legal, .release {
   width: min(800px, calc(100% - 40px));
   padding: 36px;
   padding-bottom: 60px;
   margin: 20px auto;
-  background: var(--white);
+  background: var(--surface);
   border-radius: 6px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
 }
 
 .featured, .release {
@@ -170,13 +228,39 @@ nav.family h1 {
   margin-bottom: 2px;
 }
 
+.product-showcase .featured {
+  width: min(760px, 100%);
+  max-width: 760px;
+  min-height: 100%;
+  margin: 0;
+  padding: 30px;
+  padding-bottom: 34px;
+  border-radius: 10px;
+}
+
+.product-showcase .featured > div {
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+.product-showcase .featured > div > img {
+  flex: 0 0 auto;
+  width: 108px;
+  height: 108px;
+  margin: 6px 0 0;
+  border-radius: 24px;
+  box-shadow: 0 14px 28px rgba(18, 29, 36, 0.12);
+}
+
 .featured.product-detail-card h2 {
   max-width: 560px;
   margin: 0 0 12px;
-  font-family: Lato;
-  font-size: clamp(1.3rem, 3.5vw, 1.75rem);
-  font-weight: 300;
-  line-height: 1.18;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(1.3rem, 3.5vw, 1.72rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
   color: var(--title);
 }
 
@@ -214,11 +298,13 @@ nav.family h1 {
 }
 
 .featured.product-box {
-  transition: background-color 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .featured.product-box:hover {
-  background-color: #1CC8DB66;
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--line));
+  box-shadow: 0 24px 60px rgba(18, 29, 36, 0.13);
   cursor: pointer;
 }
 
@@ -252,17 +338,28 @@ nav.family h1 {
 }
 
 .hero-release h4 {
-  max-width: 680px;
+  max-width: 760px;
   margin: 12px 0;
-  font-family: Mukta;
-  font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 650;
+  letter-spacing: -0.045em;
   font-size: clamp(2rem, 6vw, 4.2rem);
   line-height: 1.02;
   color: var(--foreground);
 }
 
+.release.hero-release {
+  padding: clamp(34px, 6vw, 58px);
+  border-radius: 12px;
+}
+
+.release.hero-release h3 {
+  margin-top: 0;
+  font-weight: 500;
+}
+
 .hero-release p {
-  max-width: 640px;
+  max-width: 700px;
   font-size: 1.18rem;
   line-height: 1.5;
 }
@@ -294,6 +391,7 @@ nav.family h1 {
 .primary-cta {
   color: var(--white);
   background: var(--accent);
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--accent) 24%, transparent);
 }
 
 .secondary-cta {
@@ -315,9 +413,9 @@ nav.family h1 {
 
 .step-grid section {
   padding: 18px;
-  border: 1px solid color-mix(in srgb, var(--foreground) 12%, transparent);
+  border: 1px solid var(--line);
   border-radius: 6px;
-  background: color-mix(in srgb, var(--background) 28%, var(--white));
+  background: var(--surface-alt);
 }
 
 .step-grid h5 {
@@ -365,6 +463,15 @@ nav.family h1 {
   height: auto;
 }
 
+.release figure img {
+  border-radius: 8px;
+}
+
+.release[id="release-log"],
+#release-log {
+  scroll-margin-top: 28px;
+}
+
 .legal h1 {
   margin-top: 0;
 }
@@ -408,6 +515,23 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .site-home {
+    width: calc(100% - 24px);
+    margin: -4px auto 28px;
+  }
+  .studio-hero {
+    padding: 12px 0 22px;
+    margin-left: 8px;
+    text-align: left;
+  }
+  .product-showcase {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 4px 0 18px;
+  }
   .featured h1 {
     font-size: clamp(2rem, 10vw, 2.5em);
     line-height: 1.05;
@@ -460,6 +584,11 @@ footer {
     border-radius: 0;
     margin: 12px 0;
   }
+  .release.hero-release {
+    width: 100%;
+    border-radius: 0;
+    padding: 28px 24px;
+  }
   .hero-release h4 {
     font-size: clamp(2rem, 12vw, 3.2rem);
   }
@@ -477,6 +606,19 @@ footer {
   .release figure {
     width: 100%;
     margin-left: 0;
+  }
+  .product-showcase .featured {
+    flex-basis: auto;
+    width: 100%;
+    padding: 24px;
+    border-radius: 10px;
+  }
+  .product-showcase .featured > div {
+    gap: 18px;
+  }
+  .product-showcase .featured > div > img {
+    width: 84px;
+    height: 84px;
   }
   .featured div {
     align-items: flex-start;
@@ -531,7 +673,7 @@ a.secondary {
 }
 
 button {
-  font-family: Lato;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
   font-weight: bold;
   font-size: 1em;
   padding: 10px 20px;
