@@ -1,12 +1,25 @@
+import { useEffect } from 'react'
 import { FaRegCopy } from "react-icons/fa6"
+
+const CALLBACK_URL = 'https://api.family.cuatro.studio/auth/opengateway/callback'
 
 const Callback = () => {
 	const error: string | null = new URLSearchParams(window.location.search).get('error')
 	const errorMessage = new URLSearchParams(window.location.search).get('error_description')
 	const code = new URLSearchParams(window.location.search).get('code')
 	const state = new URLSearchParams(window.location.search).get('state')
+
+	useEffect(() => {
+		const params = new URLSearchParams(window.location.search)
+		const state = params.get('state')
+		if (!state?.startsWith('family:')) return
+		params.set('state', state.slice('family:'.length))
+		const queryString = params.toString()
+		window.location.replace(`${CALLBACK_URL}${queryString ? `?${queryString}` : ''}`)
+	}, [])
+
 	try {
-		if (state) {
+		if (state && !state.startsWith('family:')) {
 			const decodedState = JSON.parse(atob(state))
 			if (decodedState) {
 				const queryString = window.location.search
@@ -16,6 +29,7 @@ const Callback = () => {
 	} catch (error) {
 		console.error("Failed to decode or parse state:", error)
 	}
+
 	return <>
 		<main>
 			<div className="featured ogw">
@@ -88,7 +102,7 @@ const Callback = () => {
 				}
 			</div>
 		</main>
-	</>	
+	</>
 }
 
 export default Callback

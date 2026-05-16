@@ -8,7 +8,7 @@ function App() {
 		<Router>
 			<Routes>
 				<Route path="/ogw" element={<OpenGateway />} />
-				<Route path="/ogw/*" element={<Callback />} />
+				<Route path="/ogw/callback" element={<Callback />} />
 				<Route path="*" element={<Home />} />
 			</Routes>
 		</Router>
