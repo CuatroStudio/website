@@ -8,18 +8,27 @@ const Callback = () => {
 	const errorMessage = new URLSearchParams(window.location.search).get('error_description')
 	const code = new URLSearchParams(window.location.search).get('code')
 	const state = new URLSearchParams(window.location.search).get('state')
+	const isFamilyCallback = state?.startsWith('family:') === true
 
 	useEffect(() => {
 		const params = new URLSearchParams(window.location.search)
 		const state = params.get('state')
-		if (!state?.startsWith('family:')) return
+		if (!isFamilyCallback || !state) return
 		params.set('state', state.slice('family:'.length))
 		const queryString = params.toString()
 		window.location.replace(`${CALLBACK_URL}${queryString ? `?${queryString}` : ''}`)
-	}, [])
+	}, [isFamilyCallback])
+
+	if (isFamilyCallback) {
+		return (
+			<main className="ogw-redirect-screen">
+				<div className="ogw-spinner" aria-label="Cargando" />
+			</main>
+		)
+	}
 
 	try {
-		if (state && !state.startsWith('family:')) {
+		if (state) {
 			const decodedState = JSON.parse(atob(state))
 			if (decodedState) {
 				const queryString = window.location.search

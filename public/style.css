@@ -185,6 +185,28 @@ nav.family h1 {
   max-width: 800px;
 }
 
+.ogw-redirect-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ogw-spinner {
+  width: 56px;
+  height: 56px;
+  border: 6px solid rgba(88, 82, 76, 0.18);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: ogw-spin 0.8s linear infinite;
+}
+
+@keyframes ogw-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .legal {
   max-width: calc(480px + 36px);
 }
