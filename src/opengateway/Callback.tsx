@@ -23,6 +23,7 @@ const Callback = () => {
 		return (
 			<main className="ogw-redirect-screen">
 				<div className="ogw-spinner" aria-label="Cargando" />
+				<p>Verificándote en la red...</p>
 			</main>
 		)
 	}
