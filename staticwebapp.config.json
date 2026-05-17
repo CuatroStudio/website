@@ -1,4 +1,10 @@
 {
+	"globalHeaders": {
+		"Content-Security-Policy": "default-src 'self'; script-src 'self'; connect-src 'self'; img-src 'self' data: https://api.producthunt.com; media-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
+		"Referrer-Policy": "no-referrer",
+		"X-Content-Type-Options": "nosniff",
+		"X-Frame-Options": "DENY"
+	},
 	"navigationFallback": {
 		"rewrite": "index.html"
 	},
