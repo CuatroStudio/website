@@ -14,6 +14,37 @@ const Home = () => {
 			</section>
 			<section className="product-showcase product-card-list" aria-label="Products">
 				<div
+					className="featured product-box product-detail-card"
+					onClick={(event) => {
+						if ((event.target as HTMLElement).closest("a")) return
+						window.location.href = "tildone"
+					}}
+				>
+					<h3>Coming soon: Tildone for Mac 2.0 and new iPhone app</h3>
+					<div>
+						<img src="/tildone-home-icon.png" alt="Tildone" width={120} height={120} />
+						<div>
+							<a href="tildone">
+								<h1>Tildone</h1>
+							</a>
+							<h2>Keep your next task in sight, on Mac and iPhone.</h2>
+							<p>
+								Lightweight sticky task lists for your Mac, with a native iPhone companion for plans on the move.
+							</p>
+							<ul>
+								<li>Mac 2.0 and iPhone 1.0 coming soon</li>
+								<li>Free sync between devices using the same Apple Account</li>
+								<li>Optional one-time Pro for subtasks, single memos, and text styling</li>
+							</ul>
+							<div className="home-card-cta">
+								<a className="primary-cta" href="https://apps.apple.com/app/tildone/id6473126292" target="_blank" rel="noreferrer">Download current Mac version</a>
+								<a className="secondary-cta" href="tildone">Discover what’s coming</a>
+								<a className="secondary-cta" href="tildone/#release-log">See the release log</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div
 					className="featured product-box product-detail-card piano-card"
 					onClick={(event) => {
 						if ((event.target as HTMLElement).closest("a")) return
@@ -106,36 +137,7 @@ const Home = () => {
 						</div>
 					</div>
 				</div>
-				<div
-					className="featured product-box product-detail-card"
-					onClick={(event) => {
-						if ((event.target as HTMLElement).closest("a")) return
-						window.location.href = "tildone"
-					}}
-				>
-					<h3>Discover more</h3>
-					<div>
-						<img src="/tildone.svg" alt="Tildone" width={120} height={120} />
-						<div>
-							<a href="tildone">
-								<h1>Tildone</h1>
-							</a>
-							<h2>Sticky to-do notes that stay visible until the work is done.</h2>
-							<p>
-								A small macOS task-notes app for keeping lists on your desktop, checking them off, and letting finished notes fade away.
-							</p>
-							<ul>
-								<li>Unlimited sticky notes and task lists</li>
-								<li>Colors, transparency, minimization, and keyboard navigation</li>
-								<li>Focus Filters support and no data collected</li>
-							</ul>
-							<div className="home-card-cta">
-								<a className="primary-cta" href="https://apps.apple.com/app/tildone/id6473126292" target="_blank" rel="noreferrer">Download for Mac</a>
-								<a className="secondary-cta" href="tildone">See release notes</a>
-							</div>
-						</div>
-					</div>
-				</div>
+
 			</section>
 		</main>
 	</>

@@ -1,0 +1,35 @@
+.tildone-page { width: min(1040px, calc(100% - 40px)); margin: 0 auto 48px; }
+.tildone-page .release { width: 100%; max-width: none; margin: 20px 0; border-radius: 12px; }
+.languages { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 18px; margin: 0 4px 12px; font-size: .9rem; }
+.languages a[aria-current] { color: var(--foreground); font-weight: 600; }
+.tildone-page .hero-release h1 { color: var(--foreground); font-size: clamp(2.7rem, 7vw, 5rem); line-height: 1; letter-spacing: -.05em; margin: 12px 0 20px; max-width: 750px; padding: 0; }
+.tildone-page .intro { max-width: 650px; }
+.eyebrow { color: var(--accent); font-size: .9rem; font-weight: 650; letter-spacing: .02em; }
+.release-status { display: inline-block; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-alt); padding: 10px 14px; font-size: 1rem !important; font-weight: 600; }
+.tildone-page .cta-row { margin: 16px 0 0; }
+.tildone-page .primary-cta { color: #fff; background: #087985; }
+.platform { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 32px; align-items: center; }
+.platform h2, .details h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); line-height: 1.12; letter-spacing: -.035em; font-weight: 600; margin: 10px 0 16px; }
+.platform p, .details p { line-height: 1.55; }
+.platform img { display: block; width: 100%; height: auto; border-radius: 8px; }
+.details { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+a:focus-visible { outline: 3px solid #d78623; outline-offset: 4px; }
+@media (max-width: 768px) {
+ .tildone-page { width: 100%; }
+ .languages { justify-content: flex-start; padding: 20px 24px 0; }
+ .tildone-page .release { border-radius: 0; margin: 12px 0; }
+ .platform, .details { grid-template-columns: 1fr; gap: 20px; }
+}
+nav .brand { font-size: 3.6em; font-weight: 650; letter-spacing: -.035em; color: var(--title); margin: 35px 0 0 50px; padding-top: 10px; line-height: 35px; }
+.tildone-page .release figure img { max-width: 100%; height: auto; }
+@media (max-width: 768px) { nav .brand { font-size: clamp(1.9rem, 9vw, 2.6rem); margin: 0 0 0 16px; padding: 0; } }
+.carousel { min-width: 0; width: 100%; }
+.carousel-viewport { position: relative; }
+.carousel-slide[hidden], .carousel-arrow[hidden] { display: none; }
+.carousel-slide img, .carousel-slide video { display: block; width: 100%; height: auto; border-radius: 8px; background: #1d273d; }
+.carousel-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 1; display: grid; place-items: center; width: 44px; height: 44px; margin: 0; padding: 0 0 4px; border: 1px solid rgba(255,255,255,.7); border-radius: 50%; color: #fff; background: rgba(20,30,40,.8); font-size: 2rem; line-height: 1; }
+.carousel-arrow.previous { left: 8px; }
+.carousel-arrow.next { right: 8px; }
+.carousel-arrow:hover { background: #087985; }
+.carousel-arrow:focus-visible { outline: 3px solid #d78623; outline-offset: 3px; }
+.carousel-count { text-align: center; font-size: .85rem; margin: 8px 0 0; }
